@@ -2,6 +2,9 @@ package no.hvl.dat250.jpa.tutorial.creditcards;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class CreditCard {
 
@@ -11,6 +14,12 @@ public class CreditCard {
     private int number;
     private int creditLimit;
     private int balance;
+
+    @ManyToOne
+    private Pincode code;
+
+    @ManyToOne
+    private Bank bank;
 
     public Integer getNumber() {
         // TODO: implement method!
@@ -29,11 +38,11 @@ public class CreditCard {
 
     public Pincode getPincode() {
         // TODO: implement method!
-        return null;
+        return this.code;
     }
 
     public Bank getOwningBank() {
         // TODO: implement method!
-        return null;
+        return this.bank;
     }
 }
