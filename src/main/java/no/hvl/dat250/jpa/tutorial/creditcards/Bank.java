@@ -25,8 +25,16 @@ public class Bank {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Collection<CreditCard> getOwnedCards() {
         // TODO: implement method!
         return ownedCards;
+    }
+
+    public void setOwnedCards(List<CreditCard> ownedCards) {
+        this.ownedCards = ownedCards;
     }
 }

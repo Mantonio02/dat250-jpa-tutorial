@@ -17,9 +17,21 @@ public class Address {
     @ManyToMany
     private List<Customer> owners = new ArrayList<>();
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getStreet() {
         // TODO: implement method!
         return this.street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
     }
 
     public Integer getNumber() {
@@ -27,8 +39,16 @@ public class Address {
         return this.number;
     }
 
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
     public Collection<Customer> getOwners() {
         // TODO: implement method!
         return owners;
+    }
+
+    public void setOwners(List<Customer> owners) {
+        this.owners = owners;
     }
 }

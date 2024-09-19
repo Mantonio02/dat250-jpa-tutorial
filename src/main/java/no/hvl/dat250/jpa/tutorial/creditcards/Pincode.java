@@ -19,8 +19,16 @@ public class Pincode {
         return pincode;
     }
 
+    public void setCode(String pincode) {
+        this.pincode = pincode;
+    }
+
     public Integer getCount() {
         // TODO: implement method!
         return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }

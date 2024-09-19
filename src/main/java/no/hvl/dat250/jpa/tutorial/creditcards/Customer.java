@@ -19,9 +19,21 @@ public class Customer {
     @ManyToMany
     private List<CreditCard> creditCards = new ArrayList<>();
 
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         // TODO: implement method!
         return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Collection<Address> getAddresses() {
@@ -29,8 +41,16 @@ public class Customer {
         return addresses;
     }
 
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
+
     public Collection<CreditCard> getCreditCards() {
         // TODO: implement method!
         return creditCards;
+    }
+
+    public void setCreditCards(List<CreditCard> creditCards) {
+        this.creditCards = creditCards;
     }
 }

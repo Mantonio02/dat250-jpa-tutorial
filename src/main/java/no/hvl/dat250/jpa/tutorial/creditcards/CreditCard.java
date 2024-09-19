@@ -26,9 +26,17 @@ public class CreditCard {
         return this.number;
     }
 
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
     public Integer getBalance() {
         // TODO: implement method!
         return this.balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
     public Integer getCreditLimit() {
@@ -36,13 +44,25 @@ public class CreditCard {
         return this.creditLimit;
     }
 
+    public void setCreditLimit(int creditLimit) {
+        this.creditLimit = creditLimit;
+    }
+
     public Pincode getPincode() {
         // TODO: implement method!
         return this.code;
     }
 
+    public void setPincode(Pincode code) {
+        this.code = code;
+    }
+
     public Bank getOwningBank() {
         // TODO: implement method!
         return this.bank;
+    }
+
+    public void setOwningBank(Bank bank) {
+        this.bank = bank;
     }
 }
