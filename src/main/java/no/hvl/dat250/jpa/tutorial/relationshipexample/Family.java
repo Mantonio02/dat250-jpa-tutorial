@@ -1,9 +1,14 @@
 package no.hvl.dat250.jpa.tutorial.relationshipexample;
 
-import jakarta.persistence.*;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 @Entity
 public class Family {
@@ -15,7 +20,7 @@ public class Family {
     @OneToMany(mappedBy = "family")
     private final List<Person> members = new ArrayList<>();
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
