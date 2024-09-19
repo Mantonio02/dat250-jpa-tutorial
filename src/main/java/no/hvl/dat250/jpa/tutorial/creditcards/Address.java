@@ -8,15 +8,17 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String street;
+    private int number;
 
     public String getStreet() {
         // TODO: implement method!
-        return null;
+        return this.street;
     }
 
     public Integer getNumber() {
         // TODO: implement method!
-        return null;
+        return this.number;
     }
 
     public Collection<Customer> getOwners() {

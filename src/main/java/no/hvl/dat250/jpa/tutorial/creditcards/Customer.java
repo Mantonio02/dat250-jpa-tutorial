@@ -8,10 +8,11 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
 
     public String getName() {
         // TODO: implement method!
-        return null;
+        return this.name;
     }
 
     public Collection<Address> getAddresses() {

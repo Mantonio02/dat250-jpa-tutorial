@@ -8,20 +8,23 @@ public class CreditCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private int number;
+    private int creditLimit;
+    private int balance;
 
     public Integer getNumber() {
         // TODO: implement method!
-        return null;
+        return this.number;
     }
 
     public Integer getBalance() {
         // TODO: implement method!
-        return null;
+        return this.balance;
     }
 
     public Integer getCreditLimit() {
         // TODO: implement method!
-        return null;
+        return this.creditLimit;
     }
 
     public Pincode getPincode() {
