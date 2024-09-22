@@ -45,10 +45,35 @@ public class Address {
 
     public Collection<Customer> getOwners() {
         // TODO: implement method!
-        return owners;
+        return this.owners;
     }
 
-    public void setOwners(List<Customer> owners) {
-        this.owners = owners;
+    public void addOwner(Customer owner) {
+        this.owners.add(owner);
     }
+
+//    @Override
+//    public boolean equals(Object obj) {
+//        return super.equals(obj);
+//    }
+//
+//    @Override
+//    public String toString() {
+//        String ownersAsString = "";
+//        if (this.owners.isEmpty()) return "Address {" +
+//                "id=" + id +
+//                ", street='" + street + '\'' +
+//                ", number='" + number + '\'' +
+//                ", number='" + number + '\'' +
+//                ", (no Owner given)'" + '\'' +
+//                '}';
+//        for (Customer curr : owners) ownersAsString += (curr + ", ");
+//        return "Address {" +
+//                "id=" + id +
+//                ", street='" + street + '\'' +
+//                ", number='" + number + '\'' +
+//                ", number='" + number + '\'' +
+//                ", " + ownersAsString + '\'' +
+//                '}';
+//    }
 }

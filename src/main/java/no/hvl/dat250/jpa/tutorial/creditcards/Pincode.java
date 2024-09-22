@@ -31,4 +31,18 @@ public class Pincode {
     public void setCount(int count) {
         this.count = count;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return "Address {" +
+                "id=" + id +
+                ", pincode='" + pincode + '\'' +
+                ", count='" + count + '\'' +
+                '}';
+    }
 }

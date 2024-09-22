@@ -37,4 +37,17 @@ public class Bank {
     public void setOwnedCards(List<CreditCard> ownedCards) {
         this.ownedCards = ownedCards;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return "Address {" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

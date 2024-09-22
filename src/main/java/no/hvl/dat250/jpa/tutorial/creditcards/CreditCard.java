@@ -65,4 +65,21 @@ public class CreditCard {
     public void setOwningBank(Bank bank) {
         this.bank = bank;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return "Address {" +
+                "id=" + id +
+                ", number='" + number + '\'' +
+                ", creditLimit='" + creditLimit + '\'' +
+                ", balance=" + balance + '\'' +
+                ", code=" + code + '\'' +
+                ", bank=" + bank + '\'' +
+                '}';
+    }
 }
