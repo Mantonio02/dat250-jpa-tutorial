@@ -7,6 +7,7 @@ import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,8 +15,8 @@ public class Address {
     private String street;
     private int number;
 
-    @ManyToMany
-    private List<Customer> owners = new ArrayList<>();
+    @ManyToMany(mappedBy = "addresses")
+    private List<Customer> owners;
 
     public Long getId() {
         return id;
@@ -23,6 +24,10 @@ public class Address {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Address() {
+        this.owners = new ArrayList<Customer>();
     }
 
     public String getStreet() {
@@ -48,32 +53,7 @@ public class Address {
         return this.owners;
     }
 
-    public void addOwner(Customer owner) {
+    public void setOwner(Customer owner) {
         this.owners.add(owner);
     }
-
-//    @Override
-//    public boolean equals(Object obj) {
-//        return super.equals(obj);
-//    }
-//
-//    @Override
-//    public String toString() {
-//        String ownersAsString = "";
-//        if (this.owners.isEmpty()) return "Address {" +
-//                "id=" + id +
-//                ", street='" + street + '\'' +
-//                ", number='" + number + '\'' +
-//                ", number='" + number + '\'' +
-//                ", (no Owner given)'" + '\'' +
-//                '}';
-//        for (Customer curr : owners) ownersAsString += (curr + ", ");
-//        return "Address {" +
-//                "id=" + id +
-//                ", street='" + street + '\'' +
-//                ", number='" + number + '\'' +
-//                ", number='" + number + '\'' +
-//                ", " + ownersAsString + '\'' +
-//                '}';
-//    }
 }

@@ -3,6 +3,7 @@ package no.hvl.dat250.jpa.tutorial.creditcards.driver;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import jakarta.persistence.Query;
 import no.hvl.dat250.jpa.tutorial.creditcards.*;
 
 public class CreditCardsMain {
@@ -28,10 +29,14 @@ public class CreditCardsMain {
 
     Customer customer = new Customer();
     customer.setName("Max Mustermann");
-    customer.addAddress(address);
-    address.addOwner(customer);
     em.persist(customer);
+
+    customer.setAddress(address);
+    address.setOwner(customer); // Things go awry here!
+
     em.persist(address);
+    em.persist(customer);
+    //em.persist(address);
 
     CreditCard card1 = new CreditCard();
     card1.setBalance(12345);
@@ -51,27 +56,37 @@ public class CreditCardsMain {
     em.persist(code);
 
     card1.setPincode(code);
-    card2.setPincode(code);
-    em.persist(code);
     em.persist(card1);
+    em.persist(code);
+
+    card2.setPincode(code);
     em.persist(card2);
+    em.persist(code);
 
     Bank bank = new Bank();
     bank.setName("Pengebank");
     em.persist(bank);
 
     bank.getOwnedCards().add(card1);
-    bank.getOwnedCards().add(card2);
     card1.setOwningBank(bank);
-    card2.setOwningBank(bank);
+
     em.persist(bank);
     em.persist(card1);
+
+    bank.getOwnedCards().add(card2);
+    card2.setOwningBank(bank);
+
+    em.persist(bank);
     em.persist(card2);
 
     customer.getCreditCards().add(card1);
-    customer.getCreditCards().add(card2);
+
     em.persist(customer);
     em.persist(card1);
+
+    customer.getCreditCards().add(card2);
+
+    em.persist(customer);
     em.persist(card2);
   }
 
