@@ -18,16 +18,16 @@ public class Address {
     @ManyToMany(mappedBy = "addresses")
     private List<Customer> owners;
 
+    public Address() {
+        this.owners = new ArrayList<Customer>();
+    }
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Address() {
-        this.owners = new ArrayList<Customer>();
     }
 
     public String getStreet() {

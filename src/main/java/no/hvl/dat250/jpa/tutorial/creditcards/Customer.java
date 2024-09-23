@@ -55,7 +55,7 @@ public class Customer {
         return creditCards;
     }
 
-    public void setCreditCards(List<CreditCard> creditCards) {
-        this.creditCards = creditCards;
+    public void setCreditCard(CreditCard card) {
+        this.creditCards.add(card);
     }
 }

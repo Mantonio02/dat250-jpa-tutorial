@@ -2,7 +2,8 @@
 
 ## Progress:
 - Done experiment 1 alongside the optional task.
-- Stuck on experiment 2 with the bidirectional many-to-many relationship between Address and Customer not operating as intended.
+- Stuck on experiment 2 with the bidirectional many-to-many relationship between Address and Customer not operating as intended when Address is tested about its owner.
+- All components in experiment 2 has getters and setters for each field variable.
 
 ## Technical Issues:
 - Did not encounter any issues with installation.
@@ -25,10 +26,14 @@
   - CreditCard -> Pincode : Many-to-One.
   - CreditCard <-> Bank : Many-to-One (bidirectional).
 - The database run when a transaction begins after the Entity Manager is set up in the corresponding main class CreditCardsMain. Then, whenever the EM is called upon, it will perform a task upon whatever is given, i.e. em.persist(o), etc.
-- The SQL used to create the table Customer is CREATE Table Customer.
+- The SQL used to create the table Customer is:
+  - CREATE Table Customer (
+      id int,
+      name varchar(255)
+    ).
 - A way I have found to inspect tables being created is through debugging with System.out.println(...);. The use of queries is certainly useful to test specific cases such as finding items containing certain values through the WHERE clause.
 - The created tables Address and Customer do not correspond well to my initial thoughts of the exercise.
 
 ## Pending Issues:
 - As mentioned earlier, I encountered a problem that caused progress for the assignment to halt. This issue has remained since I first encountered it, thus I never managed to complete the second experiment.
-- I do not know whether the other objects works as intended for CreditCardsMainTest due to the above issue.
+- I do not know whether the other objects works as intended for CreditCardsMainTest due to the issue.

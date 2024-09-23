@@ -14,6 +14,10 @@ public class Pincode {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getCode() {
         // TODO: implement method!
         return pincode;
@@ -30,19 +34,5 @@ public class Pincode {
 
     public void setCount(int count) {
         this.count = count;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
-    @Override
-    public String toString() {
-        return "Address {" +
-                "id=" + id +
-                ", pincode='" + pincode + '\'' +
-                ", count='" + count + '\'' +
-                '}';
     }
 }

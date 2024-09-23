@@ -14,10 +14,14 @@ public class Bank {
     private String name;
 
     @OneToMany
-    private List<CreditCard> ownedCards = new ArrayList<>();
+    private List<CreditCard> ownedCards = new ArrayList<CreditCard>();
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -34,20 +38,7 @@ public class Bank {
         return ownedCards;
     }
 
-    public void setOwnedCards(List<CreditCard> ownedCards) {
-        this.ownedCards = ownedCards;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
-    @Override
-    public String toString() {
-        return "Address {" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+    public void setOwnedCard(CreditCard card) {
+        this.ownedCards.add(card);
     }
 }
